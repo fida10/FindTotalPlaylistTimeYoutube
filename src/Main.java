@@ -12,4 +12,4 @@ public class Main {
 		PlaylistMethods listOne = new PlaylistMethods();
 		listOne.playlistMethods(dr,"//span[contains(@class, 'style-scope ytd-thumbnail-overlay-time-status-renderer')]");
 	}
-}
+} //now just need to catch the various possible exceptions, and perhaps clean up the code somewhat.

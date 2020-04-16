@@ -1,7 +1,4 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import java.util.*;
 
@@ -17,11 +14,15 @@ public class PlaylistMethods {
 		TimeStampParser.timeOutPuttersinText();
 	}
 	private static void getURL(WebDriver dr){
-		Scanner sc = new Scanner(System.in);
-		System.out.println("What playlist do you want the time of? ");
-		String playListURL = sc.nextLine();
-		System.out.println("URL to use: " + playListURL);
-		dr.get(playListURL);
+		try {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("What playlist do you want the time of? ");
+			String playListURL = sc.nextLine();
+			System.out.println("URL to use: " + playListURL);
+			dr.get(playListURL);
+		} catch (InvalidArgumentException e) {
+			System.out.println("Invalid url, please try again.");
+		}
 	}
 	public static List<String> getTimeOfEachVideo(WebDriver dr, String commonTimeStampXpath) throws InterruptedException {
 
